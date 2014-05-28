@@ -1,5 +1,5 @@
 # List of operators along with their associated precedence
-operators = {None: 100, '+': 3, '-': 3, '%': 2, '*': 2, '/': 2, '(': 1, ')': 1}
+operators = {'+': 3, '-': 3, '%': 2, '*': 2, '/': 2, '(': 1, ')': 1}
 
 
 def operation(v1, v2, operator):
@@ -64,7 +64,7 @@ def calculate(formula):
 
                     item = operator_stack.pop()
 
-            elif peek == '(' or operators[item] < operators[peek]:
+            elif peek is None or peek == '(' or operators[item] < operators[peek]:
                 operator_stack.append(item)
             else:
                 value2 = operand_stack.pop()
@@ -91,4 +91,4 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print('Input formula required')
     else:
-        print('Result = {}'.format(calculate(sys.argv[1])))
+        print(calculate(sys.argv[1]))
