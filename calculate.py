@@ -1,5 +1,5 @@
 # List of operators along with their associated precedence
-operators = {None: 100, '+': 3, '-': 3, '*': 2, '/': 2, '(': 1, ')': 1}
+operators = {None: 100, '+': 3, '-': 3, '%': 2, '*': 2, '/': 2, '(': 1, ')': 1}
 
 
 def operation(v1, v2, operator):
@@ -11,6 +11,8 @@ def operation(v1, v2, operator):
         return v1 * v2
     elif operator == '/':
         return int(v1 / v2)
+    elif operator == '%':
+        return v1 % v2
     else:
         raise ValueError('Unknown operator specified: {}'.format(operator))
 
