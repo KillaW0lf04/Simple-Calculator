@@ -53,7 +53,18 @@ def calculate(formula):
             else:
                 peek = None
 
-            if operators[item] < operators[peek]:
+            if item == ')':
+                item = operator_stack.pop()
+
+                while item != '(':
+                    value2 = operand_stack.pop()
+                    value1 = operand_stack.pop()
+
+                    operand_stack.append(operation(value1, value2, item))
+
+                    item = operator_stack.pop()
+
+            elif peek == '(' or operators[item] < operators[peek]:
                 operator_stack.append(item)
             else:
                 value2 = operand_stack.pop()
