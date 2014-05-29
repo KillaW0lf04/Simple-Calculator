@@ -1,3 +1,5 @@
+from string import whitespace
+
 # List of operators along with their associated precedence
 operators = {'+': 3, '-': 3, '%': 2, '*': 2, '/': 2, '(': 1, ')': 1}
 
@@ -30,7 +32,7 @@ def parse_formula(text):
                 tokens.append(int(buffer))
             tokens.append(c)
             buffer = ''
-        elif c == ' ' and buffer:
+        elif c in whitespace and buffer:
             tokens.append(int(buffer))
             buffer = ''
 

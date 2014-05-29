@@ -32,3 +32,6 @@ def test_whitespaces():
     assert calculate('5 + 5') == 10
     assert calculate('5+5 -3') == 7
     assert calculate('5     +  9') == 14
+
+    assert calculate('5\t+6') == 11
+    assert calculate('8\n+5+  7') == 20
