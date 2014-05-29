@@ -2,7 +2,7 @@ __author__ = 'Michael Aquilina'
 
 """
 Simple script that is able to parse and solve input formulas from the command line.
-This is performed by transforming the formula to postfix (Reverse-Polish).
+This is performed by transforming the formula to postfix (Reverse-Polish) notation.
 Contains support for all standard operators including:
 * Multiplication
 * Division
