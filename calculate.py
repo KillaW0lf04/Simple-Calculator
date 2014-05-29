@@ -30,6 +30,9 @@ def parse_formula(text):
                 tokens.append(int(buffer))
             tokens.append(c)
             buffer = ''
+        elif c == ' ' and buffer:
+            tokens.append(int(buffer))
+            buffer = ''
 
     if buffer:
         tokens.append(int(buffer))

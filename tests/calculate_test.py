@@ -11,6 +11,8 @@ def test_basic_operators():
     assert calculate('7/3') == 2
     assert calculate('5-10') == -5
 
+    assert calculate('55+20') == 75
+
 
 def test_operator_precedence():
     # Test Precedence of operators
@@ -24,3 +26,9 @@ def test_parentheses():
     assert calculate('7*(5+2)') == 49
     assert calculate('(7*3)+(10/3)') == 24
     assert calculate('7+(7*(6+10/(1*2)))') == 84
+
+
+def test_whitespaces():
+    assert calculate('5 + 5') == 10
+    assert calculate('5+5 -3') == 7
+    assert calculate('5     +  9') == 14
