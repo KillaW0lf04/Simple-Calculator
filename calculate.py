@@ -96,4 +96,6 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print('Input formula required')
     else:
-        print(calculate(sys.argv[1]))
+        text = ' '.join(sys.argv[1:])
+
+        print(calculate(text))
