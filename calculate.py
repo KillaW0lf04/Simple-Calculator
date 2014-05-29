@@ -64,7 +64,7 @@ def calculate(formula):
 
                     item = operator_stack.pop()
 
-            elif peek is None or peek == '(' or operators[item] < operators[peek]:
+            elif peek is None or peek == '(' or operators[item] <= operators[peek]:
                 operator_stack.append(item)
             else:
                 value2 = operand_stack.pop()
