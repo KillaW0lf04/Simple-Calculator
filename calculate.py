@@ -12,7 +12,7 @@ def operation(v1, v2, operator):
     elif operator == '*':
         return v1 * v2
     elif operator == '/':
-        return int(v1 / v2)
+        return float(v1 / v2)
     elif operator == '%':
         return v1 % v2
     else:
@@ -25,19 +25,19 @@ def parse_formula(text):
     buffer = ''
 
     for c in text:
-        if '0' <= c <= '9':
+        if '0' <= c <= '9' or c == '.':
             buffer += c
         elif c in operators:
             if buffer:
-                tokens.append(int(buffer))
+                tokens.append(float(buffer))
             tokens.append(c)
             buffer = ''
         elif c in whitespace and buffer:
-            tokens.append(int(buffer))
+            tokens.append(float(buffer))
             buffer = ''
 
     if buffer:
-        tokens.append(int(buffer))
+        tokens.append(float(buffer))
 
     return tokens
 
@@ -49,7 +49,7 @@ def calculate(formula):
     operand_stack = []
 
     for item in tokens:
-        if type(item) is int:
+        if type(item) is float:
             operand_stack.append(item)
         elif type(item) is str:
 
