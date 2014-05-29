@@ -98,4 +98,5 @@ if __name__ == '__main__':
     else:
         text = ' '.join(sys.argv[1:])
 
+        print(text)
         print(calculate(text))
