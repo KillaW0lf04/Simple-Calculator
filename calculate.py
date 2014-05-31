@@ -2,18 +2,19 @@
 
 __author__ = 'Michael Aquilina'
 
-"""
-Simple script that is able to parse and solve input formulas from the command line.
-This is performed by transforming the formula to postfix (Reverse-Polish) notation.
-Contains support for all standard operators including:
-* Multiplication
-* Division
-* Addition
-* Subtraction
-* Modulus
-Ambiguous formulas are solved using standard BODMAS rules. Parentheses are also
-supported to specify exact orderings.
-"""
+__desc__ = \
+    """
+    Simple script that is able to parse and solve input formulas from the command line.
+    This is performed by transforming the formula to postfix (Reverse-Polish) notation.
+    Contains support for all standard operators including:
+    * Multiplication
+    * Division
+    * Addition
+    * Subtraction
+    * Modulus
+    Ambiguous formulas are solved using standard BODMAS rules. Parentheses are also
+    supported to specify exact orderings.
+    """
 
 from string import whitespace
 
@@ -111,7 +112,9 @@ if __name__ == '__main__':
     import sys
 
     if len(sys.argv) < 2:
-        print('Input formula required')
+        print('Usage: ')
+        print('    python calculate.py <formula>')
+        print(__desc__)
     else:
         text = ' '.join(sys.argv[1:])
 
